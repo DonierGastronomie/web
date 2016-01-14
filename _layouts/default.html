@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang }}">
+
+  {% include head.html %}
+
+  <body>
+
+    {% assign id = page.url %}
+    {% if page.lang != site.lang %}
+    {% assign id = page.url | slice: 3, 100 %}
+    {% endif %}
+
+    {% assign pages = site.pages | sort: 'order' %}
+    <ul>
+      {% for p in pages | sort: 'lang_order' %}
+      {% assign pid = p.url %}
+      {% if p.lang != site.lang %}
+      {% assign pid = p.url | slice: 3, 100 %}
+      {% endif %}
+      {% if pid == id %}
+      <li><a href={{ p.url }}>{{ p.lang }}</a></li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+
+    <div>
+      {{ content }}
+    </div>
+
+  </body>
+
+</html>

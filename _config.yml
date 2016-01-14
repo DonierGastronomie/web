@@ -1,0 +1,20 @@
+title: "Lang"
+
+lang: "fi"
+
+permalink: /:title/
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      lang: "fi"
+      order: 1
+      layout: "default"
+  -
+    scope:
+      path: "en"
+    values:
+      lang: "en"
+      order: 2
