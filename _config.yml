@@ -10,6 +10,7 @@ defaults:
       path: ""
     values:
       lang: "fi"
+      langurl: "/"
       order: 1
       layout: "default"
   -
@@ -17,12 +18,14 @@ defaults:
       path: "en"
     values:
       lang: "en"
+      langurl: "/en/"
       order: 3
   -
     scope:
       path: "sv"
     values:
       lang: "sv"
+      langurl: "/sv/"
       order: 2
 
 t:

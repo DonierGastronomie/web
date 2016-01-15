@@ -8,12 +8,13 @@
   <!-- Custom Fonts -->
   <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
   <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <!-- <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
+  <link rel="stylesheet" href="{{ "/css/donier.css" | prepend: site.baseurl }}">
   {% if jekyll.environment == "development" %}
-  <script src="http://livejs.com/live.js"></script>
+  <script src="{{ "/js/live.js" | prepend: site.baseurl }}"></script>
   {% endif %}
+  <script src="{{ "/js/donier.js" | prepend: site.baseurl }}"></script>
 
 </head>

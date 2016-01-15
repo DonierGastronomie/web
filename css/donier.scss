@@ -12,34 +12,20 @@
 $header-height: 60px;
 $header-brand-font-size: 40px;
 $header-font-size: 14px;
-$header-menu-font-size: 22px;
-$header-background-color: #222;
+$header-menu-font-size: 21px;
+$header-background-color: #111;
 $header-color: #fff;
 $header-active-color: #aaa;
 $header-mobile-width: 640px;
 $header-expaned-menu-element-height: 30px;
 
-$font-montserrat: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$highlight-color: #c1a01b;
 
-body {
-}
+$font-montserrat: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 a {
   text-decoration: none;
   color: inherit;
-}
-
-@mixin justify-all($font-size) {
-  text-align: justify;
-  font-size: 0;
-  > * {
-    font-size: $font-size;
-  }
-  &:after {
-    content: '';
-    display: inline-block;
-    width: 100%;
-  }
 }
 
 @mixin header-element {
@@ -75,6 +61,12 @@ header {
       cursor: pointer;
       @media (max-width: $header-mobile-width) {
         display: block;
+      }
+      &:hover {
+        color: $header-active-color;
+        &.inactive {
+          color: $header-color;
+        }
       }
     }
     #menu-toggle {
@@ -137,8 +129,97 @@ header {
   }
 }
 
+html, body {
+  height: 100%;
+}
 body {
+  font-family: "Lora", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
   section:first-of-type {
+    // this may cause troubles. replace with padding if something weird happens.
     margin-top: $header-height;
+  }
+}
+
+section {
+  padding: 20px;
+  padding-top: 70px;
+  padding-bottom: 100px;
+  a {
+    transition: all .2s ease-in-out;
+    color: $highlight-color;
+    &:hover {
+      color: darken($highlight-color, 10%);
+    }
+  }
+  h1 {
+    font-family: $font-montserrat;
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+  h2 {
+    font-size: 20px;
+    color: #646464;
+    font-style: italic;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 32px;
+    margin-top: 0;
+    margin-bottom: 35px;
+  }
+}
+
+section.intro {
+  font-size: 20px;
+  color: #fff;
+  display: table;
+  width: 100%;
+  min-height: 280px;
+  height: 50%;
+  background-color: grey;
+  background-image: url("../img/dark-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+  > div {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 15px;
+    img {
+      margin: auto;
+      display: block;
+      width: 500px;
+      max-width: 100%;
+    }
+    div {
+      margin-top: 35px;
+    }
+  }
+}
+
+footer {
+  margin: 0 15px;
+  padding: 20px 0;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  div {
+    padding: 10px 0;
+    font-size: 12px;
+    span {
+      color: #fff;
+      .fa-circle {
+        transition: all .2s ease-in-out;
+        color: $highlight-color;
+      }
+    }
+    a:hover span .fa-circle {
+      color: darken($highlight-color, 10%);
+    }
   }
 }
