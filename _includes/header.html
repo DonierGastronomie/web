@@ -9,7 +9,9 @@
 
     {% assign link = base %}
     <div id="brand"{% if link == page.url %} class="active"{% endif %}>
-      <a href="{{ link }}" class="icon-donier-logo"></a>
+      <a href="{{ link }}">
+        <img alt="Donier Gastronomie" src="/img/donier-logo.svg">
+      </a>
     </div>
 
     <label id="menu-label" for="menu-toggle" onclick=""><i class="fa fa-bars"></i></label>

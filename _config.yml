@@ -4,6 +4,8 @@ lang: "fi"
 
 permalink: /:title/
 
+exclude: [Makefile, tidy-config.txt]
+
 defaults:
   -
     scope:

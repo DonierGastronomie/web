@@ -1,0 +1,6 @@
+indent: auto
+wrap: 0
+tidy-mark: no
+drop-empty-elements: no
+drop-empty-paras: no
+hide-comments: yes
