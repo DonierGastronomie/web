@@ -17,6 +17,7 @@ $header-background-color: #222;
 $header-color: #fff;
 $header-active-color: #aaa;
 $header-mobile-width: 640px;
+$header-expaned-menu-element-height: 30px;
 
 $font-montserrat: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
@@ -41,6 +42,11 @@ a {
   }
 }
 
+@mixin header-element {
+  height: $header-height;
+  line-height: $header-height;
+}
+
 header {
   position: fixed;
   top: 0;
@@ -49,23 +55,21 @@ header {
   color: $header-color;
   text-transform: uppercase;
   font-family: $font-montserrat;
+  font-size: $header-font-size;
   letter-spacing: 1px;
   nav {
     margin: 0 auto;
-    overflow: hidden;
     #brand {
+      @include header-element;
       padding: 0 10px;
-      height: $header-height;
-      line-height: $header-height;
       float: left;
       font-size: $header-brand-font-size;
     }
     // javascript-free menu toggle
     label {
+      @include header-element;
       display: none;
       float: right;
-      height: $header-height;
-      line-height: $header-height;
       font-size: $header-menu-font-size;
       margin: 0 15px;
       cursor: pointer;
@@ -90,18 +94,18 @@ header {
       }
       padding: 0 15px;
       overflow: hidden;
-      height: $header-height;
-      line-height: $header-height;
-      @include justify-all($header-font-size);
-      position: relative;
-      top: 0;
-      bottom: 0;
+      li {
+        @include header-element;
+        display: inline-block;
+      }
       #links {
+        float: left;
         li {
           margin-right: 10px;
         }
       }
       #lang {
+        float: right;
         li {
           margin-left: 5px;
         }
@@ -109,11 +113,7 @@ header {
       ul {
         margin: 0;
         padding: 0;
-        display: inline-block;
         list-style-type: none;
-        li {
-          display: inline-block;
-        }
       }
       @media (max-width: $header-mobile-width) {
         overflow: visible;
@@ -123,18 +123,15 @@ header {
         left: 0;
         right: 0;
         background-color: $header-background-color;
-        ul {
-          display: block;
-          &#links {
-            float: left;
-          }
-          &#lang {
-            float: right;
-          }
-        }
       }
       @media (max-width: 430px) {
-
+        padding-top: $header-expaned-menu-element-height/2;
+        padding-bottom: $header-expaned-menu-element-height/2;
+        li {
+          display: block;
+          line-height: $header-expaned-menu-element-height;
+          height: $header-expaned-menu-element-height;
+        }
       }
     }
   }
