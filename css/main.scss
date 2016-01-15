@@ -3,50 +3,145 @@
 ---
 @charset "utf-8";
 
-
-
-// Our variables
-$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$base-font-size:   16px;
-$base-font-weight: 400;
-$small-font-size:  $base-font-size * 0.875;
-$base-line-height: 1.5;
-
-$spacing-unit:     30px;
-
-$text-color:       #111;
-$background-color: #fdfdfd;
-$brand-color:      #2a7ae2;
-
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-
-// Width of the content area
-$content-width:    800px;
-
-$on-palm:          600px;
-$on-laptop:        800px;
-
-
-
-// Use media queries like this:
-// @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2;
-//         padding-left: $spacing-unit / 2;
-//     }
-// }
-@mixin media-query($device) {
-    @media screen and (max-width: $device) {
-        @content;
-    }
-}
-
-
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-        "base",
-        "layout"
+        "normalize",
+        "font"
 ;
+
+$header-height: 60px;
+$header-brand-font-size: 40px;
+$header-font-size: 14px;
+$header-menu-font-size: 22px;
+$header-background-color: #222;
+$header-color: #fff;
+$header-active-color: #aaa;
+$header-mobile-width: 640px;
+
+$font-montserrat: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+body {
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@mixin justify-all($font-size) {
+  text-align: justify;
+  font-size: 0;
+  > * {
+    font-size: $font-size;
+  }
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $header-background-color;
+  color: $header-color;
+  text-transform: uppercase;
+  font-family: $font-montserrat;
+  letter-spacing: 1px;
+  nav {
+    margin: 0 auto;
+    overflow: hidden;
+    #brand {
+      padding: 0 10px;
+      height: $header-height;
+      line-height: $header-height;
+      float: left;
+      font-size: $header-brand-font-size;
+    }
+    // javascript-free menu toggle
+    label {
+      display: none;
+      float: right;
+      height: $header-height;
+      line-height: $header-height;
+      font-size: $header-menu-font-size;
+      margin: 0 15px;
+      cursor: pointer;
+      @media (max-width: $header-mobile-width) {
+        display: block;
+      }
+    }
+    #menu-toggle {
+      display: none;
+    }
+    @media (max-width: $header-mobile-width) {
+      #menu-toggle:checked + #nav {
+        display: block;
+      }
+    }
+    #nav {
+      a:hover {
+        color: $header-active-color;
+      }
+      .active {
+        color: $header-active-color;
+      }
+      padding: 0 15px;
+      overflow: hidden;
+      height: $header-height;
+      line-height: $header-height;
+      @include justify-all($header-font-size);
+      position: relative;
+      top: 0;
+      bottom: 0;
+      #links {
+        li {
+          margin-right: 10px;
+        }
+      }
+      #lang {
+        li {
+          margin-left: 5px;
+        }
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        list-style-type: none;
+        li {
+          display: inline-block;
+        }
+      }
+      @media (max-width: $header-mobile-width) {
+        overflow: visible;
+        display: none;
+        position: fixed;
+        top: $header-height;
+        left: 0;
+        right: 0;
+        background-color: $header-background-color;
+        ul {
+          display: block;
+          &#links {
+            float: left;
+          }
+          &#lang {
+            float: right;
+          }
+        }
+      }
+      @media (max-width: 430px) {
+
+      }
+    }
+  }
+}
+
+body {
+  section:first-of-type {
+    margin-top: $header-height;
+  }
+}

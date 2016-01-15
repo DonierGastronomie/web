@@ -1,0 +1,58 @@
+<header>
+
+  <nav>
+
+    {% assign base = '/' %}
+    {% if page.lang != site.lang %}
+    {% assign base = base | append: page.lang | append: '/' %}
+    {% endif %}
+
+    {% assign link = base %}
+    <div id="brand"{% if link == page.url %} class="active"{% endif %}>
+      <a href="{{ link }}" class="icon-donier-logo"></a>
+    </div>
+
+    <label for="menu-toggle" onclick=""><i class="fa fa-bars"></i></label>
+    <input type="checkbox" id="menu-toggle"/>
+
+    <div id="nav">
+
+      <ul id="links">
+        {% assign link = base | append: 'team/' %}
+        <li {% if link == page.url %}class="active"{% endif %}>
+          <a href="{{ link }}">{{ site.t.team[page.lang] }}</a>
+        </li>
+        {% assign link = base | append: 'products/' %}
+        <li {% if link == page.url %}class="active"{% endif %}>
+          <a href="{{ link }}">{{ site.t.products[page.lang] }}</a>
+        </li>
+        {% assign link = base | append: 'contact/' %}
+        <li {% if link == page.url %}class="active"{% endif %}>
+          <a href="{{ link }}">{{ site.t.contact[page.lang] }}</a>
+        </li>
+      </ul>
+
+      {% assign id = page.url %}
+      {% if page.lang != site.lang %}
+      {% assign id = page.url | slice: 3, 100 %}
+      {% endif %}
+
+      {% assign pages = site.pages | sort: 'order' %}
+      <ul id="lang">
+        {% for p in pages | sort: 'lang_order' %}
+        {% assign pid = p.url %}
+        {% if p.lang != site.lang %}
+        {% assign pid = p.url | slice: 3, 100 %}
+        {% endif %}
+        {% if pid == id %}
+        {% if p.lang == page.lang %}
+        <li class="active"><a href={{ p.url }}>{{ p.lang }}</a></li>
+        {% else %}
+        <li><a href={{ p.url }}>{{ p.lang }}</a></li>
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </nav>
+</header>

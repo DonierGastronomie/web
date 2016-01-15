@@ -1,4 +1,4 @@
-title: "Lang"
+title: "Donier Gastronomie"
 
 lang: "fi"
 
@@ -17,4 +17,24 @@ defaults:
       path: "en"
     values:
       lang: "en"
+      order: 3
+  -
+    scope:
+      path: "sv"
+    values:
+      lang: "sv"
       order: 2
+
+t:
+  team:
+    fi: "Ihmiset"
+    en: "Team"
+    sv: "Team"
+  products:
+    fi: "Tuotteet"
+    en: "Products"
+    sv: "Produkter"
+  contact:
+    fi: "Yhteystiedot"
+    en: "Contact"
+    sv: "Kontakta"
