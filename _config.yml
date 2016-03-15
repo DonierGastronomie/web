@@ -21,14 +21,14 @@ defaults:
     values:
       lang: "en"
       langurl: "/en/"
-      order: 3
-  -
-    scope:
-      path: "sv"
-    values:
-      lang: "sv"
-      langurl: "/sv/"
       order: 2
+#  -
+#    scope:
+#      path: "sv"
+#    values:
+#      lang: "sv"
+#      langurl: "/sv/"
+#      order: 2
 
 t:
   team:
