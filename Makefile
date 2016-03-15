@@ -8,4 +8,5 @@ production:
 
 .PHONY: deploy
 deploy:
-	cd _production && git add --all && git commit -m "Commit" && git push origin master
+	cd _production && git add --all && git commit -m "Commit" && \
+		git push origin master
