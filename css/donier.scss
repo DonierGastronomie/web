@@ -16,8 +16,10 @@ $header-menu-font-size: 21px;
 $header-background-color: #111;
 $header-color: #fff;
 $header-active-color: #aaa;
-$header-mobile-width: 640px;
+//$header-mobile-width: 640px;
+$header-mobile-width: 320px;
 $header-expaned-menu-element-height: 30px;
+$container-width: 700px;
 
 $highlight-color: #c1a01b;
 
@@ -128,6 +130,7 @@ header {
         right: 0;
         background-color: $header-background-color;
       }
+      /*
       @media (max-width: 430px) {
         padding-top: $header-expaned-menu-element-height/2;
         padding-bottom: $header-expaned-menu-element-height/2;
@@ -137,6 +140,7 @@ header {
           height: $header-expaned-menu-element-height;
         }
       }
+      */
     }
   }
 }
@@ -183,11 +187,11 @@ section.intro {
 
 section {
   padding: 20px;
-  padding-top: 20px;
+  padding-top: 10px;
   padding-bottom: 20px;
   margin: auto;
-  @media (min-width: 768px) {
-      width: 768px;
+  @media (min-width: $container-width) {
+      width: $container-width;
   }
   a {
     transition: all .2s ease-in-out;
@@ -199,8 +203,9 @@ section {
   h1 {
     font-family: $font-montserrat;
     text-transform: uppercase;
+    font-size: 28px;
     margin: 0;
-    margin-top: 35px;
+    margin-top: 40px;
     margin-bottom: 20px;
   }
   h2 {
@@ -212,8 +217,8 @@ section {
     margin-bottom: 50px;
   }
   p {
-    font-size: 20px;
-    line-height: 32px;
+    font-size: 18px;
+    line-height: 30px;
     margin-top: 0;
     margin-bottom: 10px;
   }
@@ -249,12 +254,12 @@ footer {
     right: 0;
     text-align: left;
     img {
-      height: 40px;
-      margin: 15px;
+      height: 35px;
+      margin: 17px;
       margin-left: 20px;
     }
-    @media (min-width: 768px) {
-      width: 768px;
+    @media (min-width: $container-width) {
+      width: $container-width;
     }
   }
 }
