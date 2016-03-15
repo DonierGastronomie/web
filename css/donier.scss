@@ -153,47 +153,14 @@ body {
   }
 }
 
-section {
-  padding: 20px;
-  padding-top: 70px;
-  padding-bottom: 100px;
-  a {
-    transition: all .2s ease-in-out;
-    color: $highlight-color;
-    &:hover {
-      color: darken($highlight-color, 10%);
-    }
-  }
-  h1 {
-    font-family: $font-montserrat;
-    text-transform: uppercase;
-    margin: 0;
-    margin-bottom: 15px;
-  }
-  h2 {
-    font-size: 20px;
-    color: #646464;
-    font-style: italic;
-    font-weight: normal;
-    margin-top: 0;
-    margin-bottom: 50px;
-  }
-  p {
-    font-size: 20px;
-    line-height: 32px;
-    margin-top: 0;
-    margin-bottom: 35px;
-  }
-}
-
 section.intro {
   font-size: 20px;
   color: #fff;
   display: table;
   width: 100%;
   min-height: 280px;
-  height: 50%;
-  background-image: url("../img/dark-bg.jpg");
+  height: 40%;
+  background-image: url("../img/dark-bg-1920.jpg");
   background-size: cover;
   background-position: center;
   padding: 0;
@@ -214,23 +181,80 @@ section.intro {
   }
 }
 
+section {
+  padding: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin: auto;
+  @media (min-width: 768px) {
+      width: 768px;
+  }
+  a {
+    transition: all .2s ease-in-out;
+    color: $highlight-color;
+    &:hover {
+      color: darken($highlight-color, 10%);
+    }
+  }
+  h1 {
+    font-family: $font-montserrat;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 35px;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 20px;
+    color: #646464;
+    font-style: italic;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 50px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 32px;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+}
+
 footer {
   margin: 0 15px;
-  padding: 20px 0;
+  padding: 12px 0;
   border-top: 1px solid #ddd;
   text-align: center;
   div {
-    padding: 10px 0;
+    padding: 6px 0;
     font-size: 12px;
-    span {
-      color: #fff;
-      .fa-circle {
-        transition: all .2s ease-in-out;
-        color: $highlight-color;
+    a {
+      margin: 0 5px;
+      span {
+        color: #fff;
+        .fa-circle {
+          transition: all .2s ease-in-out;
+          color: $highlight-color;
+        }
+      }
+      :hover span .fa-circle {
+        color: darken($highlight-color, 10%);
       }
     }
-    a:hover span .fa-circle {
-      color: darken($highlight-color, 10%);
+  }
+  div.aaa {
+    position: absolute;
+    padding: 0;
+    margin: auto;
+    left: 0;
+    right: 0;
+    text-align: left;
+    img {
+      height: 40px;
+      margin: 15px;
+      margin-left: 20px;
+    }
+    @media (min-width: 768px) {
+      width: 768px;
     }
   }
 }

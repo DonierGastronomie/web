@@ -19,6 +19,7 @@
 
     <div id="nav">
 
+      <!--
       <ul id="links">
         {% assign link = base | append: 'team/' %}
         <li {% if link == page.url %}class="active"{% endif %}>
@@ -33,6 +34,7 @@
           <a href="{{ link }}">{{ site.t.contact[page.lang] }}</a>
         </li>
       </ul>
+      -->
 
       {% assign id = page.url %}
       {% if page.lang != site.lang %}
